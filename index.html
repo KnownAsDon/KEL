@@ -5,8 +5,12 @@
    <link rel="stylesheet" type="text/css" href="style.css">
    <meta charset="utf-8">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="http://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <script src="script.js"></script>
  </head>
  <body>
+   <div id="overlay"></div>
    <div class="container">
      <div class="header">
        <div class="nav">
@@ -49,18 +53,18 @@
          Muna son daukar hoto, yana da kyau ƙwarai. Amiamo la fotografia, è davvero fantastico.</p>
          <img src="images/about_bg.jpg">
          <div class="likesRating">
-           <h3>We really like:</h3>
+           <h3 id="ratingsTitle">We really like:</h3>
            <h4><i class="fa fa-camera"></i> Photography</h4>
            <div class="progressRatingP">
-            <span class="photographyPercent">90%</span>
+            <span class="photographyPercent" id="photographyPercent" style="width:0%;">90%</span>
            </div>
            <h4><i class="fa fa-instagram"></i>Instagram</h4>
            <div class="progressRatingI">
-            <span class="instagramPercent">65%</span>
+            <span class="instagramPercent" id="instagramPercent" style="width:0%;">65%</span>
            </div>
            <h4><i class="fa fa-list-alt"></i>School</h4>
            <div class="progressRatingS">
-            <span class="schoolPercent">80%</span>
+            <span class="schoolPercent" id="schoolPercent" style="width:0%;">80%</span>
           </div>
        </div>
      </div>
@@ -95,11 +99,11 @@
           <h5><i class="fa fa-map-marker"></i>Fier, AL</h5>
           <h5><i class="fa fa-phone"></i>+355 69 123 45 78</h5>
           <h5><i class="fa fa-envelope-open"></i>notyourbuisness@gmail.com</h5>
-          <form autocomplete="off">
-            <input type="text" class="name" value="Name" onfocus="this.value=''">
-            <input type="text" class="email" value="Email" onfocus="this.value=''"><br>
-            <input type="text" class="message" value="Message" onfocus="this.value=''"><br>
-            <button class="send" type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
+          <form autocomplete="off" method="post" action="" onsubmit="return messageSend();">
+            <input type="text" class="name" value="Name" requierd>
+            <input type="text" class="email" value="Email" required><br>
+            <input type="text" class="message" value="Message" required><br>
+            <button class="send" type="submit" onclick="messageSend();"><i class="fa fa-paper-plane"></i> Send Message</button>
           </form>
          </div>
          <div id="googleMap" style="width:300px;height:450px;border-radius:10px;margin-left:150px;margin-top:50px;"></div>
@@ -119,14 +123,29 @@
        <h5>Copyright © 2018 KEL</h5>
      </div>
    </div>
+   <div class="logIn">
+     <div id="mod01" class="modal">
+       <form class="modal-contect animate" id="lifm" method="post" action="" onsubmit="return logInValidation();">
+         <img src="images/modal_logo.png" class="mLogo">
+           <div class="mContainer">
+            <label for="uname">Username</label>
+            <input type="text" name="uname" class="uname" id="uname" placeholder="Enter Username" required>
+            <label for="psw">Password</label>
+            <input type="password" name="psw" class="psw" id="psw" placeholder="Enter password" required>
+            <button type="submit" class="logInButton" onclick="logInValidation();">Log In</button><br>
+            <label for="rm"><input type="checkbox"  class="rm" checked="checked" name="rm"><span class="rmt">Remember Me <span class="dontBother">(Don't even bother)</span></span></label>
+          </div>
+       </form>
+     </div>
+   </div>
    <script>
-   function myMap() {
-   var mapProp= {
+    function myMap() {
+    var mapProp= {
        center:new google.maps.LatLng(40.727198, 19.558035),
        zoom:10,
-   };
-   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-   }
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
    </script>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXFgRNYnN2RAiI8daGceouI3WKvikU0Ng&callback=myMap"></script>
  </body>
