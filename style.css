@@ -57,10 +57,6 @@ ul li{
   transition-timing-function: linear;
 }
 
-.nav ul li a:hover{
-  color: #000;
-}
-
 .nav ul li{
   transition-duration: 0.1s;
   transition-timing-function: linear;
@@ -83,7 +79,7 @@ ul li{
   padding-top: 15px;
   padding-bottom: 6px;
   padding-left: 35px;
-  margin-left: 869px;
+  margin-left: 876px;
   color: #515A5A;
   transition-duration: 0.1s;
   transition-timing-function: linear;
@@ -542,6 +538,14 @@ ul li{
   color: #515A5A;
 }
 
+.unamel{
+  margin-left: 5px;
+}
+
+.pswl{
+  margin-left: 5px;
+}
+
 .uname{
   width: 100%;
   padding: 12px 20px;
@@ -558,6 +562,22 @@ ul li{
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+.pswVisibility{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  float: right;
+  font-size: 20px;
+  color: #515A5A;
+  transition: 0.2s;
+  transition-timing-function: linear;
+  cursor: pointer;
+}
+
+.pswVisibility:hover{
+  color: #000;
 }
 
 .logInButton{
@@ -577,7 +597,7 @@ ul li{
   color: #000;
   background-color: rgba(81, 90, 90, 0.4);
   cursor: pointer;
-}
+} 
 
 .mLogo{
   width: 350px;
@@ -587,7 +607,11 @@ ul li{
   margin-left: 75px;
   transition: 0.2s;
   transition-timing-function: linear;
-}  
+}
+
+.fa-lock{
+  margin-right: 5px;
+}
 
 .mContainer{
   padding: 16px;
@@ -598,16 +622,16 @@ ul li{
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   left: 0;
   width: 500px;
-  height: 520px;
+  height: 525px;
   overflow: auto;
   padding-top: 60px;
   font-family: 'PT Sans', sans-serif;
   background-color: #CCD1D1;
   border-radius: 10px;
-  margin-top: 90px;
+  margin-top: 70px;
   margin-left: 420px;
 }
 
@@ -628,7 +652,7 @@ ul li{
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.5);
-    z-index: 1;
+    z-index: 2;
 }
 
 .animate{
@@ -649,10 +673,21 @@ ul li{
   background-color: rgba(81, 90, 90, 0.4);
 }
 
-.swal-title{
-  font-family: 'PT Sans', sans-serif;
+::-webkit-scrollbar{
+  width: 10px;
 }
 
-.swal-text{
-  font-family: 'PT Sans' sans-serif;
+::-webkit-scrollbar-track{
+  background-color: #CCD1D1;
 }
+
+::-webkit-scrollbar-thumb{
+  background-color: #707B7C;
+  transition: 0.2s;
+  transition-timing-function: linear;
+}
+
+::-webkit-scrollbar-thumb:active{
+  background-color: #515A5A;
+}
+

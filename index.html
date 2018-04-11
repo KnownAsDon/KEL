@@ -2,6 +2,7 @@
 <html>
  <head>
    <title>KEL Website</title>
+   <link rel="shortcut icon" href="images/favico.ico">
    <link rel="stylesheet" type="text/css" href="style.css">
    <meta charset="utf-8">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -99,7 +100,7 @@
           <h5><i class="fa fa-map-marker"></i>Fier, AL</h5>
           <h5><i class="fa fa-phone"></i>+355 69 123 45 78</h5>
           <h5><i class="fa fa-envelope-open"></i>notyourbuisness@gmail.com</h5>
-          <form autocomplete="off" method="post" action="" onsubmit="return messageSend();">
+          <form autocomplete="off" method="post" action="/main.php" onsubmit="return messageSend();">
             <input type="text" class="name" value="Name" requierd>
             <input type="text" class="email" value="Email" required><br>
             <input type="text" class="message" value="Message" required><br>
@@ -125,12 +126,13 @@
    </div>
    <div class="logIn">
      <div id="mod01" class="modal">
-       <form class="modal-contect animate" id="lifm" method="post" action="" onsubmit="return logInValidation();">
+       <form class="modal-contect animate" id="lifm" method="post" action="/main.php" onsubmit="return logInValidation();">
          <img src="images/modal_logo.png" class="mLogo">
            <div class="mContainer">
-            <label for="uname">Username</label>
+            <label for="uname" class="unamel"><i class="fa fa-user"></i>Username</label>
             <input type="text" name="uname" class="uname" id="uname" placeholder="Enter Username" required>
-            <label for="psw">Password</label>
+            <label for="psw" class="pswl"><i class="fa fa-lock"></i>Password</label>
+            <button type="button" onclick="passwordVisibility(this);" class="pswVisibility" id="pswVis"><i class="fa fa-eye" id="eyePswVisibility"></i></button>
             <input type="password" name="psw" class="psw" id="psw" placeholder="Enter password" required>
             <button type="submit" class="logInButton" onclick="logInValidation();">Log In</button><br>
             <label for="rm"><input type="checkbox"  class="rm" checked="checked" name="rm"><span class="rmt">Remember Me <span class="dontBother">(Don't even bother)</span></span></label>

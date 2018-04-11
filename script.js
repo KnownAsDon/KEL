@@ -13,6 +13,10 @@ function logInValidation() {
   }
   else {
     if (loginAttempts == 0) {
+      alert("OH BOY YOU F***ED UP!!");
+      $(document). ready(function() {
+        window.location.replace("https://www.youtube.com/watch?v=hhXvWX--_3k");
+      });
       swal("LOL", "OH BOY YOU F***ED UP!!", "error");
     }
     else {
@@ -30,9 +34,28 @@ function logInValidation() {
   return false;
 }
 
+//Password Visibility 
+function passwordVisibility(button){
+  var password = document.getElementById('psw');
+  
+  if (password.type === "password") {
+    password.type = "text";
+  }
+  else {
+    password.type = "password";
+  }
+}
+
+$(function() {
+  $('#eyePswVisibility').click(function () {
+    $(this).toggleClass('fa-eye fa-eye-slash');
+  });
+});
+
 //Message send
 function messageSend() {
-  alert("Thank you for your message!")
+  swal("Thank you for your message!", "We'll be sure to see it!", "success");
+  return false;
 }
 
 //Loading Progress Skill Bars
@@ -75,9 +98,10 @@ $(function(){
   });
 });
 
-
-
-
+//Scroll to Top when page refreshes
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 
 
 
